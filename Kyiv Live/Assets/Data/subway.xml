@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <!-- ================ BLUE =============== -->
+    <station>
+        <id>Minska</id>
+        <title_ua>Мінська</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>Petrivka</id>
+        <title_ua>Петрівка</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>Kontraktova</id>
+        <title_ua>Контрактова площа</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>poshtova</id>
+        <title_ua>Поштова площа</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>maidan</id>
+        <title_ua>Майдан Незалежності</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>lt</id>
+        <title_ua>пл Льва Толстого</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>olimpijska</id>
+        <title_ua>Олімпійська</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>palats_ukraina</id>
+        <title_ua>Палац Україна</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>lybidska</id>
+        <title_ua>Либідська</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>Demiivska</id>
+        <title_ua>Деміївська</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>Holosiivska</id>
+        <title_ua>Голосіївська</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>Vasylkivska</id>
+        <title_ua>Васильківська</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>Ipodrom</id>
+        <title_ua>Іподром</title_ua>
+        <color>blue</color>
+    </station>
+    <station>
+        <id>Teremky</id>
+        <title_ua>Теремки</title_ua>
+        <color>blue</color>
+    </station>
+    <!-- ================ RED =============== -->
+    <station>
+        <id>Lisova</id>
+        <title_ua>Лісова</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>darnytsia</id>
+        <title_ua>Дарниця</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>LIVOBEREZHNA</id>
+        <title_ua>Лівобережна</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>Arsenalna</id>
+        <title_ua>Арсенальна</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>Khrechatyk</id>
+        <title_ua>Хрещатик</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>Teatralna</id>
+        <title_ua>Театральна</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>Universytet</id>
+        <title_ua>Університет</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>Vokzalna</id>
+        <title_ua>Вокзальна</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>KPI</id>
+        <title_ua>Політехнічний інститут</title_ua>
+        <color>red</color>
+    </station>
+    <station>
+        <id>Shuliavska</id>
+        <title_ua>Шулявська</title_ua>
+        <color>red</color>
+    </station>
+    <!-- ================ GREEN =============== -->
+    <station>
+        <id>dorogozhychi</id>
+        <title_ua>Дорогожичі</title_ua>
+        <color>green</color>
+    </station>
+    <station>
+        <id>Lukjanivska</id>
+        <title_ua>Лук'янівська</title_ua>
+        <color>green</color>
+    </station>
+    <station>
+        <id>zoloti</id>
+        <title_ua>Золоті ворота</title_ua>
+        <color>green</color>
+    </station>
+    <station>
+        <id>PalatsSportu</id>
+        <title_ua>Палац Спорту</title_ua>
+        <color>green</color>
+    </station>
+    <station>
+        <id>Klovska</id>
+        <title_ua>Кловська</title_ua>
+        <color>green</color>
+    </station>
+    <station>
+        <id>Pecherska</id>
+        <title_ua>Печерська</title_ua>
+        <color>green</color>
+    </station>
+    <station>
+        <id>Druzhby</id>
+        <title_ua>Дружби народів</title_ua>
+        <color>green</color>
+    </station>
+    <station>
+        <id>Pozniaky</id>
+        <title_ua>Позняки</title_ua>
+        <color>green</color>
+    </station>
+
+</data>

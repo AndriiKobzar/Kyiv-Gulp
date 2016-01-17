@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <color name="clr_bgr_1">#FFFFFF</color>
+  <color name="clr_bgr_2">#14021d</color>
+  <color name="clr_bgr_3">#2a093b</color>
+
+  <color name="clr_bgr_grey">#696969</color>
+
+  <color name="clr_text_1">#858585</color>
+  <color name="clr_text_2">#757575</color>
+  <color name="clr_text_3">#212121</color>
+
+  <color name="ab_color">#f3832c</color>636262
+
+  <color name="shadowStart">#e7e5e5</color>
+  <color name="shadowCenter">#d8d8d8</color>
+  <color name="shadowEnd">#d8d8d8</color>
+
+  <color name="clr_red">#F44336</color>
+  <color name="clr_lt_red">#E57373</color>
+  <color name="clr_green">#81C784</color>
+  <color name="clr_lt_green">#A5D6A7</color>
+  <color name="clr_blue">#4FC3F7</color>
+  <color name="clr_lt_blue">#80DEEA</color>
+  <color name="clr_purple">#7E57C2</color>
+  <color name="clr_lt_purple">#B39DDB</color>
+  <color name="clr_orange">#FF7043</color>
+  <color name="clr_lt_orange">#FFAB91</color>
+  <color name="clr_yellow">#FBC02D</color>
+  <color name="clr_coffee">#A1887F</color>
+
+  <color name="clr_subway_red">#F44336</color>
+  <color name="clr_subway_blue">#03A9F4</color>
+  <color name="clr_subway_green">#009688</color>
+
+  <color name="clr_frame_preview">#FFA000</color>
+</resources>

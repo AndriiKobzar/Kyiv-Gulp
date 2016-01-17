@@ -1,0 +1,55 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:ads ="clr-namespace:GoogleAds;assembly=GoogleAds"
+    x:Class="Kyiv_Live.PlaceInfoPage"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <!--   <Image Source="Assets/AlignmentGrid.png"></Image> -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" MinHeight="161"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Background="White" Grid.RowSpan="2">
+            <TextBlock x:Name="pageName" Margin="12,12,12,0" Foreground="Black" Text="Text" Height="Auto" TextWrapping="NoWrap"  FontSize="35"/>
+        </Grid>
+
+        <ScrollViewer x:Name="list" Margin="12,72,14,90" Grid.RowSpan="2" Grid.Row="0">
+            <StackPanel Background="White">
+                <Image x:Name="Image" Source="{Binding Image}" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="Auto"/>
+                <TextBlock x:Name="Price" Foreground="Black" Style="{StaticResource PhoneTextNormalStyle}" FontSize="30" Margin="0,12,0,0"/>
+                <TextBlock x:Name="Description" Foreground="Black" Margin="0,12,0,0" Text="{Binding Description}" FontFamily="{StaticResource PhoneFontFamilyLight}"  Width="446" TextWrapping="Wrap"/>
+                <HyperlinkButton x:Name="Web" Margin="0,12,0,0" Foreground="Blue" Content="Web" Click="Web_Click" Width="Auto"/>
+                <TextBlock x:Name="Adress" Foreground="Black" Margin="0,12,0,0" Text="{Binding Adress}" Width="446" />
+                <Border x:Name="SubwayColor" Margin="0,12,0,0" HorizontalAlignment="Left" Background="{Binding SubwayColor}" Width="Auto" Height="Auto">
+                    <TextBlock x:Name="SubwayName" Margin="6,0,6,0" Width="Auto"/>
+                </Border>
+
+
+                <maps:Map x:Name="localMap" Margin="0,12,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="446" Height="359" />
+            </StackPanel>
+        </ScrollViewer>
+        <ads:AdView Grid.Row="1" AdUnitID="ca-app-pub-5226779635680203/3636004379" 
+                          Format="Banner"
+                          VerticalAlignment="Bottom" Height="75" Margin="-14,0,14,10" />
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

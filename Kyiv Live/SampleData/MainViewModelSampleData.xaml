@@ -1,0 +1,16 @@
+﻿<vm:MainViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:Kyiv_Live.ViewModels"
+    SampleProperty="Sample Text Property Value">
+
+    <vm:MainViewModel.Items>
+        <vm:ItemViewModel TagsName="design one" Tags="Maecenas praesent accumsan bibendum" ID="Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"/>
+        <vm:ItemViewModel TagsName="design two" Tags="Dictumst eleifend facilisi faucibus" ID="Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"/>
+        <vm:ItemViewModel TagsName="design three" Tags="Habitant inceptos interdum lobortis" ID="Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"/>
+        <vm:ItemViewModel TagsName="design four" Tags="Nascetur pharetra placerat pulvinar" ID="Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"/>
+        <vm:ItemViewModel TagsName="design five" Tags="Sagittis senectus sociosqu suscipit" ID="Dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis"/>
+        <vm:ItemViewModel TagsName="design six" Tags="Torquent ultrices vehicula volutpat" ID="Senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend"/>
+    </vm:MainViewModel.Items>
+
+</vm:MainViewModel>

@@ -1,0 +1,160 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:ads="clr-namespace:GoogleAds;assembly=GoogleAds"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:edc="clr-namespace:Microsoft.Expression.Controls;assembly=Microsoft.Expression.Drawing"
+    x:Class="Kyiv_Live.MainPage"
+    mc:Ignorable="d"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait">
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/add.png" IsEnabled="True" Text="Додати" Click="AddButtonClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/feature.search.png" IsEnabled="True" Text="Шукати" Click="SearchButtonClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" IsEnabled="True" Text="очистити пошук" Click="ClearButtonClick"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <Grid x:Name="LayoutRoot"  Background="White">
+        <!-- LOCALIZATION NOTE:
+            To localize the displayed strings copy their values to appropriately named
+            keys in the app's neutral language resource file (AppResources.resx) then
+            replace the hard-coded text value between the attributes' quotation marks
+            with the binding clause whose path points to that string name.
+
+            For example:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            This binding points to the template's string resource named "ApplicationTitle".
+
+            Adding supported languages in the Project Properties tab will create a
+            new resx file per language that can carry the translated values of your
+            UI strings. The binding in these examples will cause the value of the
+            attributes to be drawn from the .resx file that matches the
+            CurrentUICulture of the app at run time.
+         -->
+
+        <phone:Pivot Title="KYIV GULP" Foreground="Black" LoadingPivotItem="pivotMain_LoadingPivotItem">
+            <!--Pivot item one-->
+            <phone:PivotItem x:Name="lst" Header="СПИСОК" Margin="12,0">
+                <Grid>
+                    <ListBox ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemsSource="{Binding ChosenTags}" Margin="0,0,0,0">
+                        <ListBox.Template>
+                            <ControlTemplate>
+                                <ItemsPresenter/>
+                            </ControlTemplate>
+                        </ListBox.Template>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="0,0,6,0" Background="{Binding Colour}" Width="Auto">
+                                    <TextBlock Foreground="Black" Text="{Binding TagName}" toolkit:TiltEffect.IsTiltEnabled="False"/>
+                                </Border>
+                                </DataTemplate>
+                        </ListBox.ItemTemplate>     
+                    </ListBox>
+                    <phone:LongListSelector  x:Name="list" Margin="12,36,0,0" ItemsSource="{Binding Items}" SelectionChanged="list_SelectionChanged" >
+                        <phone:LongListSelector.ItemTemplate>                           
+                            <DataTemplate>
+                                <Grid Margin="0,0,0,17">
+                                     
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="12"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                        <ListBox x:Name="tagsBox" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Tag}">
+                                            <ListBox.Template>
+                                                <ControlTemplate>
+                                                    <ItemsPresenter/>
+                                                </ControlTemplate>
+                                            </ListBox.Template>
+                                            <ListBox.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Horizontal"/>
+                                                </ItemsPanelTemplate>
+                                            </ListBox.ItemsPanel>
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid Margin="0,0,6,0" Background="{Binding Colour}" Width="Auto">
+                                                        <TextBlock Foreground="Black" Text="{Binding TagName}" toolkit:TiltEffect.IsTiltEnabled="False"/>
+
+                                                    </Grid>
+
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+                                    </Grid>
+                                    <Rectangle Grid.Column="1" Fill="{Binding SubwayColor}" Width="12" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+           <phone:PivotItem Header="КАРТА">
+                <Grid> 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+               <maps:Map Grid.Row="0" x:Name="map" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="473" Width="436" Tap="map_Tap" Center="50.450043, 30.524021" ZoomLevel="15">
+
+                </maps:Map>
+                <ads:AdView Grid.Row="1" AdUnitID="ca-app-pub-5226779635680203/3636004379"
+                          
+                          Format="Banner"
+                          ReceivedAd="AdView_ReceivedAd"
+                          FailedToReceiveAd="AdView_FailedToReceiveAd"
+                          VerticalAlignment="Bottom" Height="75" Margin="6" />
+                </Grid>
+            </phone:PivotItem>
+            <!--   Pivot Item three
+            <phone:PivotItem Header="SETTINGS">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <toolkit:ListPicker x:Name="langPicker" Background="Gray" Margin="10,57,14,-33" SelectionChanged="ListPicker_SelectionChanged">
+                        <toolkit:ListPickerItem Content="English"/>
+                        <toolkit:ListPickerItem Content="Українська"/>
+                        <toolkit:ListPickerItem Content="Русский"/>
+                    </toolkit:ListPicker>
+                </Grid>
+                </phone:PivotItem> -->
+
+        </phone:Pivot>
+
+        <!--Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+
+            Before shipping remove this XAML and the image itself.-->
+        <!--  <Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHitTestVisible="False" />      -->
+    </Grid>
+
+</phone:PhoneApplicationPage>
